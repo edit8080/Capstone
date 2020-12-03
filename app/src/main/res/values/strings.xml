@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">HappyMealApp</string>
+
+    //페이스북 앱 키
+    <string name="facebook_app_id">1048349072273522</string>
+
+</resources>

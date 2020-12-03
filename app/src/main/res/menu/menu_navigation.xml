@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/scanner"
+        android:title="Scanner"
+        android:icon="@drawable/ic_scanner"/>
+
+    <item
+        android:id="@+id/ar"
+        android:title="AR"
+        android:icon="@drawable/ic_ar"/>
+
+    <item
+        android:id="@+id/favorites"
+        android:title="Favorites"
+        android:icon="@drawable/ic_favorites"/>
+
+    <item
+        android:id="@+id/community"
+        android:title="Community"
+        android:icon="@drawable/ic_community"/>
+
+    <item
+        android:id="@+id/settings"
+        android:title="Settings"
+        android:icon="@drawable/ic_settings"/>
+
+</menu>

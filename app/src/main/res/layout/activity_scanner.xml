@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+
+    android:orientation="horizontal"
+    android:visibility="visible"
+    tools:context=".Scanner">
+
+    <org.opencv.android.JavaCameraView
+        android:id="@+id/activity_surface_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        app:camera_id="any"/>
+
+    <SurfaceView
+        android:id="@+id/surface_roi_border"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#FF0000" />
+
+    <SurfaceView
+        android:id="@+id/surface_roi"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#00ff0000" />
+
+    <TextView
+        android:id="@+id/textView_ocr_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:hint="OCR 인식 결과"
+        android:gravity="center"
+        android:textSize="24sp"
+        />
+
+    <Button
+        android:id="@+id/scanResultsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="  Show scanned results  "
+        android:layout_centerInParent="true"
+        android:textColor="@android:color/white"
+        android:onClick="onClickButton"
+        android:background="@drawable/translate_to_english_button" />
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/cord_main_content"
+        android:layout_width="480dp"
+        android:layout_height="680dp"
+        android:layout_gravity="bottom"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="0dp"
+        app:behavior_peekHeight="50dp">
+
+        <include layout="@layout/custom_bottom_sheet" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:background="?android:attr/windowBackground"
+
+        app:itemIconTint="@drawable/selector"
+        app:itemTextColor="@drawable/selector"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/menu_navigation" />
+
+</RelativeLayout>

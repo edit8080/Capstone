@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ReviewPage">
+
+    <CheckBox
+        android:id="@+id/checkBox8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="335dp"
+        android:layout_marginTop="553dp"
+
+        android:layout_marginEnd="91dp"
+        android:text="Diet" />
+
+    <ImageView
+        android:id="@+id/image_view16"
+        android:layout_width="53dp"
+        android:layout_height="59dp"
+        android:layout_below="@+id/button_choose_image"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="274dp"
+        android:layout_marginTop="138dp"
+        app:srcCompat="@drawable/lowcal" />
+
+    <ImageView
+        android:id="@+id/image_view9"
+        android:layout_width="53dp"
+        android:layout_height="59dp"
+        android:layout_below="@+id/button_choose_image"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="139dp"
+        app:srcCompat="@drawable/vegan" />
+
+    <ImageView
+        android:id="@+id/image_view15"
+        android:layout_width="53dp"
+        android:layout_height="59dp"
+        android:layout_below="@+id/button_choose_image"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="204dp"
+        android:layout_marginTop="142dp"
+        app:srcCompat="@drawable/soya" />
+
+    <ImageView
+        android:id="@+id/image_view14"
+        android:layout_width="53dp"
+        android:layout_height="59dp"
+        android:layout_below="@+id/button_choose_image"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="135dp"
+        android:layout_marginTop="139dp"
+        app:srcCompat="@drawable/spicy" />
+
+    <CheckBox
+        android:id="@+id/checkBox7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="335dp"
+        android:layout_marginTop="553dp"
+
+        android:layout_marginEnd="156dp"
+        android:text="Soya" />
+
+    <CheckBox
+        android:id="@+id/checkBox6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="335dp"
+        android:layout_marginTop="552dp"
+
+        android:layout_marginEnd="223dp"
+        android:text="Spicy" />
+
+    <CheckBox
+        android:id="@+id/checkBox5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="335dp"
+        android:layout_marginTop="552dp"
+
+        android:layout_marginEnd="296dp"
+        android:text="Vegan" />
+
+    <TextView
+        android:id="@+id/community_title2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:background="#ffffff"
+        android:gravity="center"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Write Review"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <CheckBox
+        android:id="@+id/checkBox1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="335dp"
+        android:layout_marginTop="451dp"
+        android:layout_marginEnd="304dp"
+        android:text="Cow" />
+
+    <CheckBox
+        android:id="@+id/checkBox2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="335dp"
+        android:layout_marginTop="451dp"
+
+        android:layout_marginEnd="238dp"
+        android:text="Pig" />
+
+    <CheckBox
+        android:id="@+id/checkBox3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="335dp"
+        android:layout_marginTop="451dp"
+
+        android:layout_marginEnd="156dp"
+        android:text="Peanut" />
+
+    <CheckBox
+        android:id="@+id/checkBox4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="335dp"
+        android:layout_marginTop="451dp"
+
+        android:layout_marginEnd="77dp"
+        android:text="Gluten" />
+    <Button
+        android:id="@+id/button_choose_image"
+        android:layout_width="122dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="307dp"
+        android:layout_marginEnd="140dp"
+        android:background="@drawable/translate_to_english_button"
+        android:text="  Image Choose  "
+        android:textColor="@android:color/white" />
+
+    <EditText
+        android:id="@+id/edit_text_file_name"
+        android:layout_width="219dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="62dp"
+        android:layout_marginEnd="179dp"
+        android:hint="Enter Menu/Restaurant"
+        android:inputType="" />
+
+    <EditText
+        android:id="@+id/edit_hashtag"
+        android:layout_width="321dp"
+        android:layout_height="57dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="597dp"
+        android:layout_marginEnd="45dp"
+        android:hint="e.g. seafood,drink,traditional"
+        android:inputType="" />
+
+    <EditText
+        android:id="@+id/review_textbox"
+        android:layout_width="219dp"
+        android:layout_height="178dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="118dp"
+        android:layout_marginEnd="179dp"
+        android:hint="Enter Review"
+        android:inputType="" />
+
+    <Button
+        android:id="@+id/button_upload"
+        android:layout_width="123dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="663dp"
+        android:layout_marginEnd="140dp"
+        android:background="@drawable/translate_to_english_button"
+        android:text="  Upload  "
+        android:textColor="@android:color/white" />
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/image_view"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="417dp" />
+
+    <ImageView
+        android:id="@+id/image_view8"
+        android:layout_width="53dp"
+        android:layout_height="59dp"
+        android:layout_below="@+id/button_choose_image"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="278dp"
+        android:layout_marginTop="43dp"
+        app:srcCompat="@drawable/gluten" />
+
+    <ImageView
+        android:id="@+id/image_view1"
+        android:layout_width="53dp"
+        android:layout_height="59dp"
+        android:layout_below="@+id/button_choose_image"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="42dp"
+        app:srcCompat="@drawable/cow" />
+
+    <ImageView
+        android:id="@+id/image_view6"
+        android:layout_width="53dp"
+        android:layout_height="59dp"
+        android:layout_below="@+id/button_choose_image"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="123dp"
+        android:layout_marginTop="40dp"
+        app:srcCompat="@drawable/pig" />
+
+    <ImageView
+        android:id="@+id/image_view7"
+        android:layout_width="53dp"
+        android:layout_height="59dp"
+        android:layout_below="@+id/button_choose_image"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="203dp"
+        android:layout_marginTop="40dp"
+        app:srcCompat="@drawable/peanut" />
+
+    <ImageView
+        android:id="@+id/image_view"
+        android:layout_width="164dp"
+        android:layout_height="235dp"
+        android:layout_below="@+id/button_choose_image"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="238dp"
+        android:layout_marginTop="-288dp"
+        app:srcCompat="@drawable/plate" />
+
+</RelativeLayout>
