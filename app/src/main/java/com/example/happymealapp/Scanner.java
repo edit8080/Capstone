@@ -7,10 +7,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Context;
+import android.content.ContextWrapper;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
+import android.graphics.Matrix;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
@@ -18,6 +20,7 @@ import android.os.Bundle;
 import android.annotation.TargetApi;
 import android.content.pm.PackageManager;
 import android.os.Build;
+import android.os.Environment;
 import android.os.Handler;
 import android.os.StrictMode;
 import android.os.SystemClock;
@@ -58,6 +61,9 @@ import org.opencv.core.Mat;
 import org.opencv.core.Rect;
 import org.opencv.imgproc.Imgproc;
 import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.Array;
@@ -102,8 +108,8 @@ public class Scanner extends AppCompatActivity implements CameraBridgeViewBase.C
     private int mRoiY;
 
     // 인식 영역 Width와 Height 비율
-    private double m_dWscale=(double)1/8;
-    private double m_dHscale=(double)1/2;
+    private double m_dWscale=(double)3/32;
+    private double m_dHscale=(double)3/8;
 
     private Mat m_matRoi;
     private Bitmap bmp_result;
@@ -146,7 +152,6 @@ public class Scanner extends AppCompatActivity implements CameraBridgeViewBase.C
 
     private ImageButton favoriteBtn;
     private String menuImageURL;
-
 
     static {
         System.loadLibrary("opencv_java4");
@@ -215,6 +220,10 @@ public class Scanner extends AppCompatActivity implements CameraBridgeViewBase.C
                     mBottomSheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
                 } else {
                     mBottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    for(int i=0;i<3;i++)
+                        image[i].setImageResource(0);
+
+                    hashtag.setText("");
                     favoriteBtn.setSelected(false);
                 }
 
@@ -436,6 +445,8 @@ public class Scanner extends AppCompatActivity implements CameraBridgeViewBase.C
                 bmp_result=Bitmap.createBitmap(m_matRoi.cols(), m_matRoi.rows(),Bitmap.Config.ARGB_8888);
                 Utils.matToBitmap(m_matRoi,bmp_result);
 
+                bmp_result = BitmapImageEdit(bmp_result,200);
+
                 ByteArrayOutputStream baos = new ByteArrayOutputStream();
                 bmp_result.compress(Bitmap.CompressFormat.PNG,100,baos);
 
@@ -497,6 +508,7 @@ public class Scanner extends AppCompatActivity implements CameraBridgeViewBase.C
 
                                         mDatabaseRef = FirebaseDatabase.getInstance().getReference("uploads");
                                         String search_menu = translatedText; //번역된 언어로 입력!!! (영어)
+                                        Log.d("Hash_Tag","Bef_Translate : "+translatedText);
                                         mDatabaseRef.orderByChild("mName").equalTo(search_menu).addListenerForSingleValueEvent(
                                                 new ValueEventListener() {
                                                     @Override
@@ -515,7 +527,10 @@ public class Scanner extends AppCompatActivity implements CameraBridgeViewBase.C
                                                             //Picasso.get().load(userSnapshot.child("mImageUrl").getValue().toString()).into(mImageView);
                                                             //mEditTextFileName.setText(userSnapshot.child("mImageUrl").getValue().toString());
                                                         }
+                                                        Log.d("Hash_Tag","Translate : "+translatedText+" HashTag : "+hashtag_max);
+
                                                         hashtag.setText(hashtag_max);
+                                                        hashtag_max = "";
                                                         //data will be available on dataSnapshot.getValue();
                                                         //mEditTextFileName.setText(dataSnapshot.getChildren("").toString());
                                                     }
@@ -538,6 +553,7 @@ public class Scanner extends AppCompatActivity implements CameraBridgeViewBase.C
                         }
                         else{
                             Toast.makeText(getApplicationContext(),"Please Rescan Menu",Toast.LENGTH_LONG).show();
+                            ocrText="";
                         }
                     }
                 }, 2000);
@@ -562,6 +578,34 @@ public class Scanner extends AppCompatActivity implements CameraBridgeViewBase.C
                 }
                 break;
         }
+    }
+
+    public Bitmap BitmapImageEdit(Bitmap bmpSource, int maxResolution){
+        int iWidth = bmpSource.getWidth();      //비트맵이미지의 너비
+        int iHeight = bmpSource.getHeight();     //비트맵이미지의 높이
+        int newWidth = iWidth ;
+        int newHeight = iHeight ;
+        float rate = 0.0f;
+        Bitmap retBitmap;
+
+        if(iWidth > iHeight ){
+            if(maxResolution < iWidth ){
+                rate = maxResolution / (float) iWidth ;
+                newHeight = (int) (iHeight * rate);
+                newWidth = maxResolution;
+            }
+        }else{
+            if(maxResolution < iHeight ){
+                rate = maxResolution / (float) iHeight ;
+                newWidth = (int) (iWidth * rate);
+                newHeight = maxResolution;
+            }
+        }
+        retBitmap = Bitmap.createScaledBitmap(bmpSource, newWidth, newHeight, true);
+        Matrix rotateMatrix = new Matrix();
+        rotateMatrix.postRotate(90);
+        retBitmap = Bitmap.createBitmap(retBitmap, 0, 0, newWidth, newHeight, rotateMatrix, false);
+        return retBitmap;
     }
 
     private boolean IsFavorite(String translatedText) {

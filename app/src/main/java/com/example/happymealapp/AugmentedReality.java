@@ -195,7 +195,6 @@ public class AugmentedReality extends AppCompatActivity {
         scene.addChild(anchorNode);
         run(text_search);
 
-
         if(!mediaPlayer.isPlaying()) {
             scene.removeChild(anchorNode);
             mediaPlayer.release();
@@ -230,12 +229,9 @@ public class AugmentedReality extends AppCompatActivity {
                                     Log.i("Video", "Video Playing....");
                                 }
                             });
-
-
                             break;
                         }
                     }
-
                     @Override
                     public void onCancelled(DatabaseError databaseError) {
                         throw databaseError.toException();
@@ -270,12 +266,10 @@ public class AugmentedReality extends AppCompatActivity {
         textView.post(new Runnable() {
             int i =0;
             public void run() {
-
                 textView.setText(reviews[i]);
 
                 Picasso.get().load(img_reviews[i]).into(mImageView);
 
-                //Picasso.get().load(img_reviews[i]).into(imageView);
                 i++;
                 if (i >10)
                     i = 0;

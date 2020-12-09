@@ -10,7 +10,7 @@ import java.net.URLEncoder;
 
 public class SearchClient {
     private static final String API_BASE_URL = "https://www.googleapis.com/customsearch/v1?";
-    private static final String API_KEY = "AIzaSyAyvIlO3lFCl10YOl0FEWdiBIjFVtldtR0";
+    private static final String API_KEY = "AIzaSyDRgr4Z6OUzfJB5Drdz8fIs_4cRULUfNek";
     private static final String CX_KEY = "004528206755545697344:d7tbp2chizr";
     private AsyncHttpClient client;
 
