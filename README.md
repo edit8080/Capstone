@@ -1,4 +1,4 @@
-# 2020 서울시립대학교 컴퓨터과학부 Capstone
+# 2020 서울시립대학교 컴퓨터과학부 해피밀 조 Capstone
 
 OCR을 활용한 메뉴판 번역 어플리케이션
 
@@ -43,6 +43,9 @@ OCR을 활용한 메뉴판 번역 어플리케이션
 
 ScreenShot
 =============================
-![image](https://user-images.githubusercontent.com/30149272/98258485-47961000-1fc4-11eb-8dce-c87603ea6d44.png)
+![image](https://user-images.githubusercontent.com/30149272/101025086-633b0900-35b8-11eb-8d17-87f75a592d89.png)
 
-![image](https://user-images.githubusercontent.com/30149272/98444411-e3568600-2154-11eb-8103-96a35ccfe599.png)
+Introduction video
+=============================
+https://youtu.be/tH2mm1snaJA
+
