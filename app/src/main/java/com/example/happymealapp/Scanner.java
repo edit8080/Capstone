@@ -146,6 +146,7 @@ public class Scanner extends AppCompatActivity implements CameraBridgeViewBase.C
     private boolean connected;
     Translate translate;
     private String hashtag_max = "";
+    private String temptag;
 
     SearchClient client;
     ArrayList<String> URL = new ArrayList<>();
@@ -530,7 +531,9 @@ public class Scanner extends AppCompatActivity implements CameraBridgeViewBase.C
                                                         Log.d("Hash_Tag","Translate : "+translatedText+" HashTag : "+hashtag_max);
 
                                                         hashtag.setText(hashtag_max);
-                                                        hashtag_max = "";
+                                                        temptag = hashtag_max;
+                                                        hashtag_max="";
+
                                                         //data will be available on dataSnapshot.getValue();
                                                         //mEditTextFileName.setText(dataSnapshot.getChildren("").toString());
                                                     }
@@ -566,9 +569,10 @@ public class Scanner extends AppCompatActivity implements CameraBridgeViewBase.C
                 // 즐겨찾기 추가
                 if(favoriteBtn.isSelected()){
                     favoriteList.put(translatedText,menuImageURL);
-                    if(hashtag_max.isEmpty())
-                        hashtag_max="No Information";
-                    ingredientList.put(translatedText, hashtag_max);
+                    if(temptag.isEmpty())
+                        temptag="No Information";
+
+                    ingredientList.put(translatedText, temptag);
                     Toast.makeText(getApplicationContext(), "Add to Favorites",Toast.LENGTH_LONG).show();
                 }
                 else{
